@@ -1,9 +1,105 @@
 footer {
+
   #footer-top {
+    width: $full_width;
     background-color: #ececec;
-  }
+
+    .container {
+      padding: 40px 0 30px;
+
+      .col {
+        width: $full_width / 2;
+        padding: $padding_links $padding_links * 3 0;
+      }
+
+      ul.footer-menu {
+
+        h3 {
+          color: $primary-color;
+          font-size: $font_size + 1;
+        }
+
+        li {
+          font-size: $font_size - 2;
+          line-height: 24px;
+        }
+
+        a {
+          display: block;
+          color: #4d4d4d;
+          font-size: $font_size - 2;
+          padding: $padding_links 0;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .clear-fix::after {
+        @include clear-fix;
+      }
+
+      ul.social {
+        margin: 0;
+        float: left;
+
+        li {
+          display: inline-block;
+
+          a {
+            display: inline-block;
+            padding-top: $padding_links * 2;
+            padding-right: $padding_links;
+
+            i {
+              font-size: $font_size * 2.5;
+            }
+
+            i[class*=instagram] {
+              color: #cd201e;
+            }
+
+            i[class*=facebook] {
+              color: #3b5998;
+            }
+
+            i[class*=twitter] {
+              color: #1ea1f2;
+            }
+
+            i[class*=youtube] {
+              color: #cd201e;
+            }
+
+            i[class*=pinterest] {
+              color: #bd081c;
+            }
+
+            i[class*=rss] {
+              color: #ff8d00;
+            }
+          }
+        }
+      }
+    }  // Closing .container
+  }  // Closing footer-top
 
   #footer-bottom {
 
+  }
+}
+
+/* ------------------- MEDIA QUERY ------------------- */
+
+/* Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+
+  footer #footer-top .container .col {
+    width: $full_width / 4;
+  }
+
+  footer #footer-top .container ul.footer-menu a {
+    padding: $padding_links / 4;
   }
 }

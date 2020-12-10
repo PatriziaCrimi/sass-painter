@@ -1,11 +1,66 @@
 body {
   font-family: $font_family;
+  font-size: $font_size;
+  line-height: $line_height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font_weight_titles;
+}
+
+h1, h2, h3 {
+  margin-top: $margin_titles * 2;
+  margin-bottom: $margin_titles;
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+/* RESPONSIVE LAYOUT - Mobile First */
+
+.container {
+  width: $full_width;
+  margin: 0 auto;
+}
+
+.row {
+  width: $full_width;
+  height: $full_height;
+}
+
+.col {
+  width: $full_width;
+  height: $full_height;
+}
+
+/* ------------------- MEDIA QUERY ------------------- */
+
+/* Breakpoint Small 576px sm */
+@media screen and (min-width: 576px) {
+}
+
+/* Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+  .row {
+    @include display-flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+/* Breakpoint Large 992px lg */
+@media screen and (min-width: 992px) {
+}
+
+/* Breakpoint Extra Large 1200px xl */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }

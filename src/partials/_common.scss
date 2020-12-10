@@ -15,7 +15,6 @@ h1, h2, h3 {
 
 ul {
   list-style-type: none;
-  padding: 0;
 }
 
 a {
@@ -31,12 +30,10 @@ a {
 
 .row {
   width: $full_width;
-  height: $full_height;
 }
 
 .col {
   width: $full_width;
-  height: $full_height;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
@@ -49,8 +46,6 @@ a {
 @media screen and (min-width: 768px) {
   .row {
     @include display-flex;
-    justify-content: space-between;
-    align-items: baseline;
   }
 }
 

@@ -1,5 +1,11 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Document
    ========================================================================== */
 
@@ -403,7 +409,6 @@ h3 {
 
 ul {
   list-style-type: none;
-  padding: 0;
 }
 
 a {
@@ -419,12 +424,10 @@ a {
 
 .row {
   width: 100%;
-  height: 100%;
 }
 
 .col {
   width: 100%;
-  height: 100%;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
@@ -436,8 +439,6 @@ a {
 @media screen and (min-width: 768px) {
   .row {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
   }
 }
 
@@ -480,6 +481,7 @@ footer #footer-top .container ul.footer-menu a {
   color: #4d4d4d;
   font-size: 12px;
   padding: 8px 0;
+  transition: all 0.25s;
 }
 
 footer #footer-top .container ul.footer-menu a:hover {
@@ -535,7 +537,58 @@ footer #footer-top .container ul.social li a i[class*=rss] {
   color: #ff8d00;
 }
 
+footer #footer-bottom {
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 20px;
+}
+
+footer #footer-bottom ul.logos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+footer #footer-bottom ul.logos li {
+  padding-right: 25px;
+}
+
+footer #footer-bottom .col.credits ul {
+  margin-right: 10px;
+}
+
+footer #footer-bottom .col.credits ul li {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+footer #footer-bottom .col.credits ul li a {
+  color: #999;
+  transition: all 0.25s;
+}
+
+footer #footer-bottom .col.credits ul li a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer #footer-bottom .col.credits p {
+  color: #fff;
+  font-size: 12px;
+}
+
 /* ------------------- MEDIA QUERY ------------------- */
+
+/* Breakpoint Small 576px sm */
+
+@media screen and (min-width: 576px) {
+  footer #footer-bottom .col.credits {
+    display: flex;
+    align-items: center;
+  }
+}
 
 /* Breakpoint Medium 768px md */
 
@@ -546,6 +599,42 @@ footer #footer-top .container ul.social li a i[class*=rss] {
 
   footer #footer-top .container ul.footer-menu a {
     padding: 2px;
+  }
+
+  footer #footer-bottom {
+    padding: 20px 30px;
+  }
+
+  footer #footer-bottom .col.credits {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  footer #footer-bottom .col.credits ul {
+    margin-right: 0;
+  }
+
+  footer #footer-bottom .col.credits ul li:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Breakpoint Extra Large 1200px xl */
+
+@media screen and (min-width: 1200px) {
+  footer #footer-bottom .col.credits {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  footer #footer-bottom .col.credits ul {
+    margin-right: 10px;
+  }
+
+  footer #footer-bottom .col.credits ul li:last-child {
+    margin-right: 15px;
   }
 }
 

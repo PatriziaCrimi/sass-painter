@@ -5,7 +5,7 @@ footer {
     background-color: #ececec;
 
     .container {
-      padding: 40px 0 30px;
+      padding: $padding_footer * 2 0 $padding_footer + 10;
 
       .col {
         width: $full_width / 2;
@@ -15,7 +15,7 @@ footer {
       ul.footer-menu {
 
         h3 {
-          color: $primary-color;
+          color: $primary_color;
           font-size: $font_size + 1;
         }
 
@@ -29,6 +29,7 @@ footer {
           color: #4d4d4d;
           font-size: $font_size - 2;
           padding: $padding_links 0;
+          transition: all 0.25s;
         }
 
         a:hover {
@@ -83,23 +84,111 @@ footer {
         }
       }
     }  // Closing .container
-  }  // Closing footer-top
+  }  // Closing Footer-top
 
   #footer-bottom {
+    width: $full_width;
+    background-color: $primary_bg_color;
+    padding: $padding_footer;
 
-  }
+    ul.logos {
+      @include display-flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: $padding_footer / 2 0;
+
+      li {
+        padding-right: $padding_footer + 5;
+      }
+    }
+
+    .col.credits {
+      ul {
+        margin-right: $margin_titles;
+
+        li {
+          display: inline-block;
+          font-size: $font_size - 2;
+          margin-right: $margin_titles + 5;
+
+          a {
+            color: $links_color;
+            transition: all 0.25s;
+          }
+
+          a:hover {
+            text-decoration: underline;
+            color: #fff;
+          }
+        }
+      }
+
+      p {
+        color: #fff;
+        font-size: $font_size - 2;
+      }
+    }
+  }  // Closing Footer-bottom
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
 
+/* Breakpoint Small 576px sm */
+@media screen and (min-width: 576px) {
+  footer #footer-bottom .col.credits {
+    @include display-flex;
+      align-items: center;
+  }
+}
+
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
 
-  footer #footer-top .container .col {
-    width: $full_width / 4;
-  }
+  footer {
 
-  footer #footer-top .container ul.footer-menu a {
-    padding: $padding_links / 4;
+    #footer-top {
+      .container .col {
+        width: $full_width / 4;
+      }
+
+      .container ul.footer-menu a {
+        padding: $padding_links / 4;
+      }
+    }
+
+    #footer-bottom {
+      padding: $padding_footer $padding_footer + 10;
+
+      .col.credits {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        ul {
+          margin-right: 0;
+
+          li:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }   // Closing Footer-bottom
+  }
+}
+
+/* Breakpoint Extra Large 1200px xl */
+@media screen and (min-width: 1200px) {
+  footer #footer-bottom .col.credits {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    ul {
+      margin-right: $margin_titles;
+
+      li:last-child {
+        margin-right: $margin_titles + 5;
+      }
+    }
   }
 }

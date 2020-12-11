@@ -554,6 +554,13 @@ footer #footer-bottom ul.logos li {
   padding-right: 25px;
 }
 
+footer #footer-bottom .col.credits {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 footer #footer-bottom .col.credits ul {
   margin-right: 10px;
 }
@@ -577,18 +584,10 @@ footer #footer-bottom .col.credits ul li a:hover {
 footer #footer-bottom .col.credits p {
   color: #fff;
   font-size: 12px;
+  margin-right: 25px;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
-
-/* Breakpoint Small 576px sm */
-
-@media screen and (min-width: 576px) {
-  footer #footer-bottom .col.credits {
-    display: flex;
-    align-items: center;
-  }
-}
 
 /* Breakpoint Medium 768px md */
 
@@ -601,40 +600,9 @@ footer #footer-bottom .col.credits p {
     padding: 2px;
   }
 
-  footer #footer-bottom {
-    padding: 20px 30px;
-  }
-
   footer #footer-bottom .col.credits {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  footer #footer-bottom .col.credits ul {
-    margin-right: 0;
-  }
-
-  footer #footer-bottom .col.credits ul li:last-child {
-    margin-right: 0;
-  }
-}
-
-/* Breakpoint Extra Large 1200px xl */
-
-@media screen and (min-width: 1200px) {
-  footer #footer-bottom .col.credits {
-    flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-  }
-
-  footer #footer-bottom .col.credits ul {
-    margin-right: 10px;
-  }
-
-  footer #footer-bottom .col.credits ul li:last-child {
-    margin-right: 15px;
+    align-content: center;
   }
 }
 

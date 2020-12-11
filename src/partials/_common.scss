@@ -2,6 +2,7 @@ body {
   font-family: $font_family;
   font-size: $font_size;
   line-height: $line_height;
+  color: $secondary_color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,6 +20,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.clear-fix::after {
+  @include clear-fix;
 }
 
 /* RESPONSIVE LAYOUT - Mobile First */

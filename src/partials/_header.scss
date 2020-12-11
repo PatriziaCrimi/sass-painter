@@ -1,0 +1,34 @@
+header {
+  background-color: $primary_color;
+
+  nav #nav-top {
+    padding: $padding_unit / 2 0;
+
+      ul {
+        float: right;
+
+        li {
+        display: inline-block;
+        margin-right: $margin_titles * 3;
+
+        i {
+          color: $nav_icons_color;
+          font-size: $font_size + 1;
+          padding-right: $padding_links;
+        }
+
+        a {
+          color: $links_color;
+          font-size: $font_size - 2;
+        }
+
+        select {
+          font-size: $font_size - 2;
+          color: $primary_color;
+          border-radius: none;
+          padding: 0 $padding_unit / 4;
+        }
+      }
+    }
+  }  // Closing Nav-top
+}

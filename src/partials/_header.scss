@@ -72,8 +72,7 @@ header {
 
           a::after {
             content: '\f107';
-            font-weight: bold;
-            font-family: $font_awesome_after;
+            @include before-after;
             margin-left: $margin_unit / 2;
             color: $primary_links_color;
           }
@@ -83,7 +82,6 @@ header {
   }  // Closing Nav
 
   #jumbotron {
-
     background-color: $secondary_color;
     color: $primary_color;
 
@@ -92,7 +90,7 @@ header {
     .product-info {
       padding-bottom: $padding_unit * 2;
 
-      .product_essentials {
+      .product-essentials {
         @include display-flex;
         justify-content: center;
         align-items: center;
@@ -112,19 +110,24 @@ header {
 
         li::before {
           content: '\f054';
-          font-weight: bold;
-          font-family: $font_awesome_after;
+          @include before-after;
           margin-right: $margin_unit / 1.5;
           color: $primary_links_color;
         }
       }
 
       a.btn {
+        display: block;
+        max-width: 220px;
         font-size: $font_size - 2;
         padding: 6px $padding_unit / 2 7px;
-        border: 1px solid #ccc;
-        color: $primary_color;
+        border: 1px solid $primary_links_color;
+        color: $primary_links_color;
         transition: opacity 0.25s;
+
+        i {
+          display: none;
+        }
       }
 
       a.btn:hover {
@@ -157,7 +160,7 @@ header {
           display: block;
         }
 
-        span:first-child {
+        span:first-of-type {
           font-size: $font_size * 1.8;
           color: $third_color;
         }
@@ -191,7 +194,7 @@ header {
 
         a.limited-offer {
           display: block;
-          width: 50%;
+          max-width: 340px;
           background-color: #f6f6f6;
           margin-top: $margin_unit * 2;
           padding: $padding_unit / 2;
@@ -218,6 +221,10 @@ header {
         }
       }
     }
+
+    small {
+      display: none;
+    }
   }  // Closing Jumbotron
 }
 
@@ -226,8 +233,127 @@ header {
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
   header #jumbotron {
+    background-color: lightcoral;
+    background-image: $jumbo_bg;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: $secondary_color;
+
+    .container {
+      position: relative;
+    }
+
     .container .col {
       width: $full_width / 2;
     }
+
+    .container .col-md {
+      @include display-flex;
+      justify-content: flex-end;
+    }
+
+    /* ------------------ Product Info ------------------ */
+    .product-info {
+      padding: $padding_unit $padding_unit $padding_unit * 3;
+
+      .product-essentials {
+        display: none;
+      }
+
+      a.btn {
+        background-color: $primary_links_color;
+        color: $secondary_color;
+        min-width: 150px;
+        padding: $padding_unit / 2;
+        margin: $margin_unit 0;
+        font-size: $font_size;
+        @include display-flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .download {
+          border-right: 1px solid $secondary_color;
+          padding-right: $padding_unit - 5;
+
+          span:first-child {
+            text-transform: uppercase;
+            font-weight: $font_weight_titles + 100;
+          }
+
+          span:last-child {
+            text-transform: capitalize;
+            display: block;
+            font-weight: $font_weight_titles;
+            margin-top: $margin_unit / 2;
+          }
+        }
+
+        i {
+          display: block;
+          font-size: $font_size * 1.8;
+        }
+      }
+    }  // Closing Product Info
+
+    /* ------------------ Buy Now Box ------------------ */
+    .buy-now-box {
+      width: 85%;
+      max-width: 450px;
+      height: calc(100% - 20px);
+      background-color: $third_color;
+      margin-top: $margin_unit * 2;
+      color: $secondary_color;
+
+      a.money-guarantee {
+        width: 80px;
+      }
+
+      .price-info {
+
+        span:first-of-type {
+          color: $secondary_color;
+        }
+
+        a.btn {
+          width: $full_width / 2;
+          max-width: 150px;
+          font-size: $font_size + 1;
+          padding: 5px $padding_unit $padding_unit / 2;
+          vertical-align: middle;
+          margin-top: $margin_unit * 2;
+        }
+
+        a.limited-offer {
+          margin-top: $margin_unit * 3;
+          max-width: none;
+
+          h4 {
+            font-weight: $font_weight_titles + 100;
+            font-size: $font_size + 4;
+          }
+
+          p {
+            font-size: $font_size;
+          }
+        }
+      }
+    }  // Closing Buy Box Now
+
+    small {
+      display: block;
+      color: $primary_links_color;
+      text-shadow: 1px 1px $primary_color;
+      position: absolute;
+      bottom: 20px;
+      padding-left: $padding_unit;
+    }
+  }  // Closing Jumbotron
+}
+
+/* Breakpoint Large 992px lg */
+@media screen and (min-width: 992px) {
+  .container .col-lg {
+    @include display-flex;
+    justify-content: flex-end;
   }
 }

@@ -9,3 +9,8 @@
   display: table;
   clear: both;
 }
+
+@mixin before-after {
+  font-weight: bold;
+  font-family: $font_awesome;
+}

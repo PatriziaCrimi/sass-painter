@@ -485,12 +485,12 @@ header #jumbotron {
 header #jumbotron .product-info {
   padding-bottom: 40px;
 }
-header #jumbotron .product-info .product_essentials {
+header #jumbotron .product-info .product-essentials {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header #jumbotron .product-info .product_essentials img {
+header #jumbotron .product-info .product-essentials img {
   margin-top: 30px;
   width: 115px;
 }
@@ -508,11 +508,16 @@ header #jumbotron .product-info ul li::before {
   color: #999;
 }
 header #jumbotron .product-info a.btn {
+  display: block;
+  max-width: 220px;
   font-size: 12px;
   padding: 6px 10px 7px;
-  border: 1px solid #ccc;
-  color: #333;
+  border: 1px solid #999;
+  color: #999;
   transition: opacity 0.25s;
+}
+header #jumbotron .product-info a.btn i {
+  display: none;
 }
 header #jumbotron .product-info a.btn:hover {
   opacity: 0.85;
@@ -537,7 +542,7 @@ header #jumbotron .buy-now-box .price-info {
 header #jumbotron .buy-now-box .price-info span {
   display: block;
 }
-header #jumbotron .buy-now-box .price-info span:first-child {
+header #jumbotron .buy-now-box .price-info span:first-of-type {
   font-size: 25.2px;
   color: #000;
 }
@@ -567,7 +572,7 @@ header #jumbotron .buy-now-box .price-info a.btn:hover {
 }
 header #jumbotron .buy-now-box .price-info a.limited-offer {
   display: block;
-  width: 50%;
+  max-width: 340px;
   background-color: #f6f6f6;
   margin-top: 20px;
   padding: 10px;
@@ -588,12 +593,114 @@ header #jumbotron .buy-now-box .price-info a.limited-offer span:last-of-type {
 header #jumbotron .buy-now-box .price-info a.limited-offer:hover span:last-of-type {
   text-decoration: underline;
 }
+header #jumbotron small {
+  display: none;
+}
 
 /* ------------------- MEDIA QUERY ------------------- */
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
+  header #jumbotron {
+    background-color: lightcoral;
+    background-image: url("img/jumbo_bg.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    color: #fff;
+    /* ------------------ Product Info ------------------ */
+    /* ------------------ Buy Now Box ------------------ */
+  }
+  header #jumbotron .container {
+    position: relative;
+  }
   header #jumbotron .container .col {
     width: 50%;
+  }
+  header #jumbotron .container .col-md {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header #jumbotron .product-info {
+    padding: 20px 20px 60px;
+  }
+  header #jumbotron .product-info .product-essentials {
+    display: none;
+  }
+  header #jumbotron .product-info a.btn {
+    background-color: #999;
+    color: #fff;
+    min-width: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header #jumbotron .product-info a.btn .download {
+    border-right: 1px solid #fff;
+    padding-right: 15px;
+  }
+  header #jumbotron .product-info a.btn .download span:first-child {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  header #jumbotron .product-info a.btn .download span:last-child {
+    text-transform: capitalize;
+    display: block;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  header #jumbotron .product-info a.btn i {
+    display: block;
+    font-size: 25.2px;
+  }
+  header #jumbotron .buy-now-box {
+    width: 85%;
+    max-width: 450px;
+    height: calc(100% - 20px);
+    background-color: #000;
+    margin-top: 20px;
+    color: #fff;
+  }
+  header #jumbotron .buy-now-box a.money-guarantee {
+    width: 80px;
+  }
+  header #jumbotron .buy-now-box .price-info span:first-of-type {
+    color: #fff;
+  }
+  header #jumbotron .buy-now-box .price-info a.btn {
+    width: 50%;
+    max-width: 150px;
+    font-size: 15px;
+    padding: 5px 20px 10px;
+    vertical-align: middle;
+    margin-top: 20px;
+  }
+  header #jumbotron .buy-now-box .price-info a.limited-offer {
+    margin-top: 30px;
+    max-width: none;
+  }
+  header #jumbotron .buy-now-box .price-info a.limited-offer h4 {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  header #jumbotron .buy-now-box .price-info a.limited-offer p {
+    font-size: 14px;
+  }
+  header #jumbotron small {
+    display: block;
+    color: #999;
+    text-shadow: 1px 1px #333;
+    position: absolute;
+    bottom: 20px;
+    padding-left: 20px;
+  }
+}
+/* Breakpoint Large 992px lg */
+@media screen and (min-width: 992px) {
+  .container .col-lg {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 footer #footer-top {

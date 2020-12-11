@@ -1,81 +1,136 @@
 header {
-  background-color: $primary_color;
 
-  nav #nav-top {
-    padding: $padding_unit / 2 0;
+  nav {
+    background-color: $third_color;
+
+    #nav-top {
+      padding: $padding_unit / 2 0;
 
       ul {
         float: right;
 
         li {
-        display: inline-block;
-        margin-right: $margin_titles * 3;
+          display: inline-block;
+          margin-right: $margin_unit * 3;
 
-        i {
-          color: $nav_icons_color;
-          font-size: $font_size + 1;
-          padding-right: $padding_links;
-        }
+          i {
+            color: $nav_icons_color;
+            font-size: $font_size + 1;
+            padding-right: $padding_links;
+          }
 
-        a {
-          color: $secondary_links_color;
-          font-size: $font_size - 2;
-          transition: all 0.25s;
-        }
+          a {
+            color: $links_color;
+            font-size: $font_size - 2;
+            transition: all 0.25s;
+          }
 
-        a:hover {
-          text-decoration: underline;
-          color: $secondary_color;
-        }
+          a:hover {
+            text-decoration: underline;
+            color: $secondary_color;
+          }
 
-        select {
-          font-size: $font_size - 2;
-          color: $primary_color;
-          border-radius: none;
-          padding: 0 $padding_unit / 4;
+          select {
+            font-size: $font_size - 2;
+            color: $third_color;
+            border-radius: none;
+            padding: 0 $padding_unit / 4;
+          }
         }
       }
-    }
-  }  // Closing Nav-top
+    }  // Closing Nav-top
 
-  nav #nav-bottom {
+    #nav-bottom {
 
-    .container {
+      .container {
+        @include display-flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .logo > a {
+        max-width: 120px;
+        display: block;
+        padding: $padding_links $padding_unit - 5;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .nav-menu-bottom {
+
+        li {
+          display: inline-block;
+          font-weight: 300;
+
+          a {
+            display: inline-block;
+            color: $secondary_color;
+            padding: $padding_unit $padding_unit $padding_unit - 5;
+          }
+
+          a::after {
+            content: '\f107';
+            font-weight: bold;
+            font-family: $font_awesome_after;
+            margin-left: $margin_unit / 2;
+            color: $links_color;
+          }
+        }
+      }
+    }  // Closing Nav-bottom
+  }  // Closing Nav
+
+  #jumbotron {
+
+    background-color: $secondary_color;
+    color: $primary_color;
+    padding: $padding_unit;
+
+    .product_essentials {
       @include display-flex;
-      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
-    }
-
-    .logo > a {
-      max-width: 120px;
-      display: block;
-      padding: $padding_links $padding_unit - 5;
 
       img {
-        width: 100%;
+        margin-top: $margin_unit * 3;
+        width: 115px;
       }
     }
 
-    .nav-menu-bottom {
+    ul {
+      margin: $margin_unit * 2 0;
 
       li {
-        display: inline-block;
-        font-weight: 300;
+        padding: $padding_unit / 4 0;
+      }
 
-        a {
-          display: inline-block;
-          color: $secondary_color;
-          padding: $padding_unit $padding_unit $padding_unit - 5;
-        }
-
-        a::after {
-          content: '\f107';
-          font-weight: bold;
-          font-family: $font_awesome_after;
-          margin-left: $margin_titles / 2;
-          color: $secondary_links_color;
-        }
+      li::before {
+        content: '\f054';
+        font-weight: bold;
+        font-family: $font_awesome_after;
+        margin-right: $margin_unit / 1.5;
+        color: $links_color;
       }
     }
-  }  // Closing Nav-bottom
+
+    a.btn {
+      font-size: $font_size - 2;
+      padding: 6px $padding_unit / 2 7px;
+      border: 1px solid #ccc;
+      color: $primary_color;
+    }
+  }  // Closing Jumbotron
+}
+
+/* ------------------- MEDIA QUERY ------------------- */
+
+/* Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+  header #jumbotron {
+    .container .col {
+      width: $full_width / 2;
+    }
+  }
 }

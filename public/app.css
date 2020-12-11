@@ -350,13 +350,18 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-h1, h2, h3 {
+h1, h2 {
+  font-size: 21px;
+}
+
+h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -404,7 +409,7 @@ a {
     max-width: 1200px;
   }
 }
-header {
+header nav {
   background-color: #000;
 }
 header nav #nav-top {
@@ -466,7 +471,47 @@ header nav #nav-bottom .nav-menu-bottom li a::after {
   margin-left: 5px;
   color: #999;
 }
+header #jumbotron {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+}
+header #jumbotron .product_essentials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #jumbotron .product_essentials img {
+  margin-top: 30px;
+  width: 115px;
+}
+header #jumbotron ul {
+  margin: 20px 0;
+}
+header #jumbotron ul li {
+  padding: 5px 0;
+}
+header #jumbotron ul li::before {
+  content: "\F054";
+  font-weight: bold;
+  font-family: "Font Awesome 5 Free";
+  margin-right: 6.6666666667px;
+  color: #999;
+}
+header #jumbotron a.btn {
+  font-size: 12px;
+  padding: 6px 10px 7px;
+  border: 1px solid #ccc;
+  color: #333;
+}
 
+/* ------------------- MEDIA QUERY ------------------- */
+/* Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+  header #jumbotron .container .col {
+    width: 50%;
+  }
+}
 footer #footer-top {
   width: 100%;
   background-color: #ececec;

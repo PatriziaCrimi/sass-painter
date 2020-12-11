@@ -15,7 +15,7 @@ footer {
       ul.footer-menu {
 
         h3 {
-          color: $primary_color;
+          color: $third_color;
           font-size: $font_size + 1;
         }
 
@@ -105,15 +105,15 @@ footer {
         flex-wrap: wrap;
 
       ul {
-        margin-right: $margin_titles;
+        margin-right: $margin_unit;
 
         li {
           display: inline-block;
           font-size: $font_size - 2;
-          margin-right: $margin_titles + 5;
+          margin-right: $margin_unit + 5;
 
           a {
-            color: $secondary_links_color;
+            color: $links_color;
             transition: all 0.25s;
           }
 
@@ -127,7 +127,7 @@ footer {
       p {
         color: $secondary_color;
         font-size: $font_size - 2;
-        margin-right: $margin_titles * 2 + 5;
+        margin-right: $margin_unit * 2 + 5;
       }
     }
   }  // Closing Footer-bottom

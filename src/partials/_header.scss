@@ -18,8 +18,14 @@ header {
         }
 
         a {
-          color: $links_color;
+          color: $secondary_links_color;
           font-size: $font_size - 2;
+          transition: all 0.25s;
+        }
+
+        a:hover {
+          text-decoration: underline;
+          color: $secondary_color;
         }
 
         select {
@@ -31,4 +37,45 @@ header {
       }
     }
   }  // Closing Nav-top
+
+  nav #nav-bottom {
+
+    .container {
+      @include display-flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .logo > a {
+      max-width: 120px;
+      display: block;
+      padding: $padding_links $padding_unit - 5;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .nav-menu-bottom {
+
+      li {
+        display: inline-block;
+        font-weight: 300;
+
+        a {
+          display: inline-block;
+          color: $secondary_color;
+          padding: $padding_unit $padding_unit $padding_unit - 5;
+        }
+
+        a::after {
+          content: '\f107';
+          font-weight: bold;
+          font-family: $font_awesome_after;
+          margin-left: $margin_titles / 2;
+          color: $secondary_links_color;
+        }
+      }
+    }
+  }  // Closing Nav-bottom
 }

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* 300;400;500;700;900 */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 * {
   margin: 0;
@@ -348,7 +350,6 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -424,12 +425,46 @@ header nav #nav-top ul li i {
 header nav #nav-top ul li a {
   color: #999;
   font-size: 12px;
+  transition: all 0.25s;
+}
+header nav #nav-top ul li a:hover {
+  text-decoration: underline;
+  color: #fff;
 }
 header nav #nav-top ul li select {
   font-size: 12px;
   color: #000;
   border-radius: none;
   padding: 0 5px;
+}
+header nav #nav-bottom .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+header nav #nav-bottom .logo > a {
+  max-width: 120px;
+  display: block;
+  padding: 8px 15px;
+}
+header nav #nav-bottom .logo > a img {
+  width: 100%;
+}
+header nav #nav-bottom .nav-menu-bottom li {
+  display: inline-block;
+  font-weight: 300;
+}
+header nav #nav-bottom .nav-menu-bottom li a {
+  display: inline-block;
+  color: #fff;
+  padding: 20px 20px 15px;
+}
+header nav #nav-bottom .nav-menu-bottom li a::after {
+  content: "\F107";
+  font-weight: bold;
+  font-family: "Font Awesome 5 Free";
+  margin-left: 5px;
+  color: #999;
 }
 
 footer #footer-top {

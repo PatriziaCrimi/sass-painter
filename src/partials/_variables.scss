@@ -1,16 +1,18 @@
 // Colors
 $primary_color: #000;
-$secondary_color: #333;
+$secondary_color: #fff;
+$primary_links_color: #333;
+$secondary_links_color: #999;
 $primary_bg_color: #1e1e1e;
 $navbar_bg_color: #101010;
-$links_color: #999;
 $nav_icons_color: #009cff;
 
 // Font
-$font_family: 'Noto Sans JP', sans-serif;
+$font_family: 'Noto Sans JP', sans-serif;  /* 300;400;500;700;900 */
 $font_size: 14px;
 $font_weight_titles: 400;
 $line_height: 1.5;
+$font_awesome_after: 'Font Awesome 5 Free';
 
 // Dimensions
 $full_height: 100%;

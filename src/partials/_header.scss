@@ -14,13 +14,13 @@ header {
           margin-right: $margin_unit * 3;
 
           i {
-            color: $nav_icons_color;
+            color: $secondary_links_color;
             font-size: $font_size + 1;
             padding-right: $padding_links;
           }
 
           a {
-            color: $links_color;
+            color: $primary_links_color;
             font-size: $font_size - 2;
             transition: all 0.25s;
           }
@@ -75,7 +75,7 @@ header {
             font-weight: bold;
             font-family: $font_awesome_after;
             margin-left: $margin_unit / 2;
-            color: $links_color;
+            color: $primary_links_color;
           }
         }
       }
@@ -86,40 +86,137 @@ header {
 
     background-color: $secondary_color;
     color: $primary_color;
-    padding: $padding_unit;
 
-    .product_essentials {
-      @include display-flex;
-      justify-content: center;
-      align-items: center;
+    /* ------------------ Product Info ------------------ */
 
-      img {
-        margin-top: $margin_unit * 3;
-        width: 115px;
-      }
-    }
+    .product-info {
+      padding-bottom: $padding_unit * 2;
 
-    ul {
-      margin: $margin_unit * 2 0;
+      .product_essentials {
+        @include display-flex;
+        justify-content: center;
+        align-items: center;
 
-      li {
-        padding: $padding_unit / 4 0;
+        img {
+          margin-top: $margin_unit * 3;
+          width: 115px;
+        }
       }
 
-      li::before {
-        content: '\f054';
-        font-weight: bold;
-        font-family: $font_awesome_after;
-        margin-right: $margin_unit / 1.5;
-        color: $links_color;
-      }
-    }
+      ul {
+        margin: $margin_unit * 2 0;
 
-    a.btn {
-      font-size: $font_size - 2;
-      padding: 6px $padding_unit / 2 7px;
-      border: 1px solid #ccc;
-      color: $primary_color;
+        li {
+          padding: $padding_unit / 4 0;
+        }
+
+        li::before {
+          content: '\f054';
+          font-weight: bold;
+          font-family: $font_awesome_after;
+          margin-right: $margin_unit / 1.5;
+          color: $primary_links_color;
+        }
+      }
+
+      a.btn {
+        font-size: $font_size - 2;
+        padding: 6px $padding_unit / 2 7px;
+        border: 1px solid #ccc;
+        color: $primary_color;
+        transition: opacity 0.25s;
+      }
+
+      a.btn:hover {
+        opacity: 0.85;
+      }
+    }  // Closing Product Info
+
+
+    /* ------------------ Buy Now Box ------------------ */
+    .buy-now-box {
+      width: $full_width;
+      background-color: $secondary_bg_color;
+      position: relative;
+
+      a.money-guarantee {
+        width: 60px;
+        position: absolute;
+        top: $padding_unit;
+        right: $padding_unit;
+
+        img {
+          width: $full_width;
+        }
+      }
+
+      .price-info {
+        padding: $padding_unit * 2 $padding_unit $padding_unit;
+
+        span {
+          display: block;
+        }
+
+        span:first-child {
+          font-size: $font_size * 1.8;
+          color: $third_color;
+        }
+
+        span:nth-of-type(2) {
+          font-size: $font_size;
+          color: $primary_links_color;
+          text-transform: uppercase;
+          font-weight: 300;
+          margin: $margin_unit 0;
+        }
+
+        a.btn {
+          display: block;
+          width: $full_width;
+          font-size: $font_size + 4;
+          padding: 8px $padding_unit $padding_unit / 2;
+          margin-top: $margin_unit;
+          color: $secondary_color;
+          background-color: $secondary_links_color;
+          border: 1px solid $secondary_links_color;
+          text-transform: uppercase;
+          text-align: center;
+          transition: all 0.25s;
+        }
+
+        a.btn:hover {
+          background-color: $hover_button_color;
+          border: 1px solid $hover_button_color;
+        }
+
+        a.limited-offer {
+          display: block;
+          width: 50%;
+          background-color: #f6f6f6;
+          margin-top: $margin_unit * 2;
+          padding: $padding_unit / 2;
+          line-height: 2;
+          color: $primary_color;
+
+          h4 {
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: $font_size - 2;
+          }
+
+          span:last-of-type {
+            color: $secondary_links_color;
+            font-size: $font_size - 2;
+          }
+        }
+
+        a.limited-offer:hover span:last-of-type {
+          text-decoration: underline;
+        }
+      }
     }
   }  // Closing Jumbotron
 }

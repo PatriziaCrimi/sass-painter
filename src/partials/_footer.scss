@@ -2,10 +2,9 @@ footer {
 
   #footer-top {
     width: $full_width;
-    background-color: #ececec;
+    background-color: $secondary_bg_color;
 
     .container {
-      padding: $padding_unit * 2 0 $padding_unit + 10;
 
       .col {
         width: $full_width / 2;
@@ -113,7 +112,7 @@ footer {
           margin-right: $margin_unit + 5;
 
           a {
-            color: $links_color;
+            color: $primary_links_color;
             transition: all 0.25s;
           }
 
@@ -141,8 +140,12 @@ footer {
   footer {
 
     #footer-top {
-      .container .col {
-        width: $full_width / 4;
+      .container {
+        padding: $padding_unit * 2 0 $padding_unit + 10;
+
+        .col {
+          width: $full_width / 4;
+        }
       }
 
       .container ul.footer-menu a {
@@ -150,9 +153,13 @@ footer {
       }
     }
 
-    #footer-bottom .col.credits {
-      justify-content: flex-end;
-      align-content: center;
+    #footer-bottom {
+      padding: $padding_unit;
+
+        .col.credits {
+        justify-content: flex-end;
+        align-content: center;
+      }
     }
   }  // Closing Footer
 

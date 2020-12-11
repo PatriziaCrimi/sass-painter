@@ -384,6 +384,7 @@ a {
 .container {
   width: 100%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .row {
@@ -398,6 +399,10 @@ a {
 /* Breakpoint Small 576px sm */
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
   .row {
     display: flex;
   }
@@ -474,35 +479,114 @@ header nav #nav-bottom .nav-menu-bottom li a::after {
 header #jumbotron {
   background-color: #fff;
   color: #333;
-  padding: 20px;
+  /* ------------------ Product Info ------------------ */
+  /* ------------------ Buy Now Box ------------------ */
 }
-header #jumbotron .product_essentials {
+header #jumbotron .product-info {
+  padding-bottom: 40px;
+}
+header #jumbotron .product-info .product_essentials {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header #jumbotron .product_essentials img {
+header #jumbotron .product-info .product_essentials img {
   margin-top: 30px;
   width: 115px;
 }
-header #jumbotron ul {
+header #jumbotron .product-info ul {
   margin: 20px 0;
 }
-header #jumbotron ul li {
+header #jumbotron .product-info ul li {
   padding: 5px 0;
 }
-header #jumbotron ul li::before {
+header #jumbotron .product-info ul li::before {
   content: "\F054";
   font-weight: bold;
   font-family: "Font Awesome 5 Free";
   margin-right: 6.6666666667px;
   color: #999;
 }
-header #jumbotron a.btn {
+header #jumbotron .product-info a.btn {
   font-size: 12px;
   padding: 6px 10px 7px;
   border: 1px solid #ccc;
   color: #333;
+  transition: opacity 0.25s;
+}
+header #jumbotron .product-info a.btn:hover {
+  opacity: 0.85;
+}
+header #jumbotron .buy-now-box {
+  width: 100%;
+  background-color: #ececec;
+  position: relative;
+}
+header #jumbotron .buy-now-box a.money-guarantee {
+  width: 60px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+header #jumbotron .buy-now-box a.money-guarantee img {
+  width: 100%;
+}
+header #jumbotron .buy-now-box .price-info {
+  padding: 40px 20px 20px;
+}
+header #jumbotron .buy-now-box .price-info span {
+  display: block;
+}
+header #jumbotron .buy-now-box .price-info span:first-child {
+  font-size: 25.2px;
+  color: #000;
+}
+header #jumbotron .buy-now-box .price-info span:nth-of-type(2) {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 10px 0;
+}
+header #jumbotron .buy-now-box .price-info a.btn {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 8px 20px 10px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #009cff;
+  border: 1px solid #009cff;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.25s;
+}
+header #jumbotron .buy-now-box .price-info a.btn:hover {
+  background-color: #28acff;
+  border: 1px solid #28acff;
+}
+header #jumbotron .buy-now-box .price-info a.limited-offer {
+  display: block;
+  width: 50%;
+  background-color: #f6f6f6;
+  margin-top: 20px;
+  padding: 10px;
+  line-height: 2;
+  color: #333;
+}
+header #jumbotron .buy-now-box .price-info a.limited-offer h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+header #jumbotron .buy-now-box .price-info a.limited-offer p {
+  font-size: 12px;
+}
+header #jumbotron .buy-now-box .price-info a.limited-offer span:last-of-type {
+  color: #009cff;
+  font-size: 12px;
+}
+header #jumbotron .buy-now-box .price-info a.limited-offer:hover span:last-of-type {
+  text-decoration: underline;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
@@ -515,9 +599,6 @@ header #jumbotron a.btn {
 footer #footer-top {
   width: 100%;
   background-color: #ececec;
-}
-footer #footer-top .container {
-  padding: 40px 0 30px;
 }
 footer #footer-top .container .col {
   width: 50%;
@@ -619,11 +700,17 @@ footer #footer-bottom .col.credits p {
 /* ------------------- MEDIA QUERY ------------------- */
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
+  footer #footer-top .container {
+    padding: 40px 0 30px;
+  }
   footer #footer-top .container .col {
     width: 25%;
   }
   footer #footer-top .container ul.footer-menu a {
     padding: 2px;
+  }
+  footer #footer-bottom {
+    padding: 20px;
   }
   footer #footer-bottom .col.credits {
     justify-content: flex-end;

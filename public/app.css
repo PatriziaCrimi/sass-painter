@@ -601,8 +601,8 @@ header #jumbotron small {
 /* Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
   header #jumbotron {
-    background-color: lightcoral;
-    background-image: url("img/jumbo_bg.jpg");
+    background-color: #000;
+    background-image: url("../img/jumbo_bg.jpg");
     background-position: right;
     background-repeat: no-repeat;
     color: #fff;
